@@ -5,6 +5,11 @@ A classifier for piRNA-mRNA pairing, based on an experimental data.
 
 ## Package requirements
 
+`
+numpy
+scikit-learn
+`
+
 ## Usage
 
 ## Results
