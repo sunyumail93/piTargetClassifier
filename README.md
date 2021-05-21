@@ -64,12 +64,21 @@ For Predict mode, the input contains only a single pattern column.
 Default optional values: CVNum=5, TNum=100, Depth=8, Cpen=1, mode=All
                TestFrac=0.05
 ***********************************************************************
+```
 
-2, Run Demo mode:
+## Running
+```
+#1, Run Demo mode:
 python3 piTargetClassifier.py --Demo
 
 #Demo mode uses pre-set parameters which are same as the following command:
 python3 piTargetClassifier.py --Align -v 1 -p ./demo/demo.piRNA.fa -c ./demo/demo.Control.fa -t ./demo/demo.Target.fa -o DemoRun --TestFrac 0.33 -w ./demo/weight.hy.txt --Learn -a -m AllBest --Predict --prealign ./demo/demo.UnknownPatterns.txt --preout DemoPre
+
+#2, Run a real dataset
+python3 piTargetClassifier.py --Align -p Results_RealData/piRNA.fa -c Results_RealData/RNA.Control.fa -t Results_RealData/RNA.Up.fa -w demo/weight.hy.txt -o MyDataFinal --Learn -l -r -m AllBest
+
+#3, Run a real dataset by importing pre-aligned results
+python3 piTargetClassifier.py --Align --import MyDataFinal --Learn -r --TNum 100 --Depth 15
 ```
 
 ## Results
